@@ -1,0 +1,200 @@
+body {
+  margin: 0px;
+  user-select: none;
+  position: relative;
+  background-color: rgba(190, 222, 235, 0.842);
+}
+
+.wrap {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.play_wrap {
+  position: absolute;
+  /* z-index: 9999; */
+  background: url(./images/background.jpg) 0px center no-repeat; /*设置输入框的背景*/
+}
+.search_bar {
+  display: flex;
+  background-color: #1eacda;
+  align-items: center;
+  height: 60px;
+  width: 800px;
+}
+#titleName {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  margin-left: 30px;
+  font-size: 30px;
+  font-family: "宋体";
+}
+.search_bar img {
+  margin-left: 23px;
+}
+/* 搜索框样式 */
+.search_bar input {
+  display: flex;
+  margin-left: 400px;
+  width: 296px;
+  height: 34px;
+  border-radius: 17px;
+  border-radius: 17px;
+  border: 0px;
+  outline: none; /*取消输入框的选中样式*/
+  text-indent: 15px; /* 设置输入框内光标与最前端的距离 */
+  background: url(./images/search.png) 265px center no-repeat
+    rgba(190, 222, 235, 0.842); /*设置输入框的背景*/
+}
+
+/* 中间部分 */
+.center_con {
+  height: 435px;
+  background-color: rgba(235, 235, 235, 0.5);
+  display: flex;
+  opacity: 0.9;
+  position: relative;
+}
+/* 歌曲列表部分 */
+.son_wrapper {
+  touch-action: none; /*当触控事件发生在元素上的时候，不进行任何操作*/
+  width: 200px;
+  height: 435px;
+  box-sizing: border-box;
+  padding: 10px;
+  list-style: none; /*取消列表样式*/
+  background: url(./images/line.png) right center /*背景线*/ no-repeat;
+  overflow-y: scroll;
+}
+/* 滚动条样式 */
+.son_wrapper::-webkit-scrollbar {
+  width: 2px;
+  /* height: 200px; */
+}
+.son_wrapper::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+.son_wrapper li {
+  position: relative;
+  margin-left: -30px;
+  margin-top: -15px;
+  line-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis; /*显示省略符号来代表被修剪的文本。*/
+  white-space: nowrap; /*规定段落中文本不换行*/
+  cursor: pointer;
+  font-size: 13px;
+}
+/* 中间播放部分（歌曲封面） */
+.player_con {
+  width: 400px;
+  height: 435px;
+  position: relative;
+}
+#player_bar {
+  display: flex;
+  position: absolute;
+  margin-left: 170px;
+  z-index: 500;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: 1s;
+}
+.disc {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 65px;
+  z-index: 100;
+  animation: mymove 5s 0s linear infinite normal none paused;
+}
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.songsPic {
+  position: absolute;
+  width: 150px;
+  margin-top: 130px;
+  margin-left: 118px;
+  animation: mymove 5s 0s linear infinite normal none paused;
+}
+/* animation: mymove 5s infinite; */
+/* animation-play-state: running; */
+/*指定动画是否正在运行或已暂停。*/
+/* animation-timing-function: linear; */
+/*指定动画将如何完成一个周期。（linear:动画从头到尾的速度是相同的。） */
+
+/* 评论列表 */
+.comment_list {
+  width: 200px;
+  height: 435px;
+  box-sizing: border-box;
+  /*规定容器元素的最终尺寸计算方式*/
+  padding: 10px;
+  list-style: none;
+  background: url(./images/line.png) /*背景图片地址*/ left /*居左*/ no-repeat
+    /*background-image不会重复*/;
+  /* background-color: rgba(241, 141, 141, 0.5); */
+  overflow: auto;
+  overflow-y: scroll;
+  position: relative;
+}
+/* 滚动条样式 */
+.comment_list::-webkit-scrollbar {
+  width: 4px;
+  /* height: 200px; */
+}
+.comment_list::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.comments_dl {
+  position: relative;
+  /* background-color: rgba(241, 141, 141, 0.1); */
+  line-height: 30px;
+}
+/* 评论用户头像 */
+.albumImg {
+  position: absolute;
+  margin-top: 4px;
+  width: 40px;
+  border-radius: 88px;
+}
+/* 评论者昵称 */
+.name {
+  font-size: 13px;
+  font-weight: bolder;
+  margin-left: 52px;
+}
+/* 具体评论信息 */
+.detailCom {
+  font-size: 10px;
+  margin-left: 52px;
+}
+/* 底部播放部分 */
+.myaudio {
+  width: 800px;
+  height: 40px;
+  outline: none;
+  background-color: #f1f3f4;
+}
+/*mv*/
+.video_con {
+  position: absolute;
+  display: flex;
+  margin-top: -480px;
+  margin-left: 90px;
+  z-index: 10000;
+}
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  margin-top: -4px;
+}
